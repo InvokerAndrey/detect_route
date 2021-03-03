@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Add city</title>
+{% endblock title %}
+
+{% block content %}
+<h1>Add City</h1>
+{% include 'cities/form.html' with button='Add' %}
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Delete city</title>
+{% endblock title %}
+
+{% block content %}
+<h1>Delete City {{ object }}</h1>
+{% include 'cities/form.html' with button='Delete' %}
+{% endblock content %}
