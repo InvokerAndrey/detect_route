@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Train Details</title>
+{% endblock title %}
+
+{% block content %}
+<h1> Train </h1>
+<div class="row">
+    <div class="div col-md">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Train</th>
+              <th scope="col">From city</th>
+              <th scope="col">To city</th>
+              <th scope="col">Travel time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{ object.name }}</th>
+              <td>{{ object.from_city }}</td>
+              <td>{{ object.to_city }}</td>
+              <td>{{ object.travel_time }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'trains:home' %}">
+            <button type="button" class="btn btn-secondary">Back</button>
+        </a>
+    </div>
+</div>
+{% endblock content %}

@@ -1,4 +1,7 @@
 {% url 'cities:home' as cities_home_url %}
+{% url 'cities:create' as cities_create_url %}
+{% url 'trains:home' as trains_home_url %}
+{% url 'trains:create' as trains_create_url %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,8 +15,9 @@
       {% block title %}
       {% endblock title%}
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light col-md-8 mx-auto" style="background-color: #d8fff1">
+  <body style="background-color: #F0F9FB">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom border-dark col-md-8 mx-auto"
+         style="background-color: #F0F9FB">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">FindRoute</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,15 +30,21 @@
                  aria-current="page" href="{% url 'cities:home' %}">Cities</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link {% if request.path == trains_home_url %} active {% endif %}"
+                 aria-current="page" href="{% url 'trains:home' %}">Trains</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+              <a class="nav-link dropdown-toggle
+              {% if request.path == cities_create_url or request.path == trains_create_url %}active{% endif %}"
+                 href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Add
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="{% url 'cities:create' %}">New city</a></li>
+                <li><a class="dropdown-item" href="{% url 'trains:create' %}">New train</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
