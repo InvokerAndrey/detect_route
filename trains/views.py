@@ -9,7 +9,7 @@ from .forms import TrainForm
 
 class TrainListView(ListView):
     queryset = Train.objects.all()
-    paginate_by = 2
+    paginate_by = 5
     template_name = 'trains/home.html'
 
     def get_context_data(self, **kwargs):

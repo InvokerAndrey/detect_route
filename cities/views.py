@@ -34,7 +34,7 @@ def home(request, pk=None):
 
 class CityListView(ListView):
     queryset = City.objects.all()
-    paginate_by = 2
+    paginate_by = 5
     template_name = 'cities/home.html'
 
     def get_context_data(self, **kwargs):
