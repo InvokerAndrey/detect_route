@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .forms import RouteForm, RouteModelForm
@@ -80,3 +81,12 @@ class RouteListView(ListView):
 class RouteDetailView(DetailView):
     queryset = Route.objects.all()
     template_name = 'routes/detail.html'
+
+
+class RouteDeleteView(DeleteView):
+    model = Train
+    success_url = reverse_lazy('home')
+
+    def get(self, request, *args, **kwargs):
+        messages.success('Route does not just exist now unlike you')
+        return self.post(request, *args, **kwargs)
