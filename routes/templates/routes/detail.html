@@ -15,6 +15,7 @@
               <th scope="col">To city</th>
               <th scope="col">Travel time</th>
               <th scope="col">Trains list</th>
+              <td>&nbsp</td>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +29,14 @@
                     <p>{{ train }} Travel time - {{ train.travel_time }} hours</p>
                   {% endfor %}
               </td>
+                {% if user.is_authenticated %}
+                <td>
+                    <a href="{% url 'delete' pk=object.pk %}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
+                {% endif %}
+                &nbsp
             </tr>
           </tbody>
         </table>

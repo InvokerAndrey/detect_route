@@ -28,5 +28,6 @@ urlpatterns = [
     path('detail/<int:pk>/', views.RouteDetailView.as_view(), name='detail'),
     path('delete/<int:pk>/', views.RouteDeleteView.as_view(), name='delete'),
     path('cities/', include(('cities.urls', 'cities'))),
-    path('trains/', include(('trains.urls', 'trains')))
+    path('trains/', include(('trains.urls', 'trains'))),
+    path('accounts/', include(('accounts.urls', 'accounts'))),
 ]

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -83,10 +84,11 @@ class RouteDetailView(DetailView):
     template_name = 'routes/detail.html'
 
 
-class RouteDeleteView(DeleteView):
-    model = Train
+class RouteDeleteView(LoginRequiredMixin, DeleteView):
+    model = Route
     success_url = reverse_lazy('home')
+    #login_url = '/login/'
 
     def get(self, request, *args, **kwargs):
-        messages.success('Route does not just exist now unlike you')
+        messages.success(request, 'Route does not just exist now unlike you')
         return self.post(request, *args, **kwargs)
