@@ -6,6 +6,10 @@ __pycache__
 db.sqlite3
 media
 
+# Django stuff
+*.log
+local_settings.py
+
 # Backup files #
 *.bak
 
