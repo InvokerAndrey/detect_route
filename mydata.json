@@ -1,0 +1,131 @@
+[
+{
+  "model": "cities.city",
+  "pk": 1,
+  "fields": {
+    "name": "Minsk"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 2,
+  "fields": {
+    "name": "Moskow"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 15,
+  "fields": {
+    "name": "Amsterdam"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 17,
+  "fields": {
+    "name": "Mozyr"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 18,
+  "fields": {
+    "name": "London"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 19,
+  "fields": {
+    "name": "сердечко моего парня"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 4,
+  "fields": {
+    "name": "Minsk-Amsterdam-1",
+    "total_travel_time": 2,
+    "from_city": 1,
+    "to_city": 15,
+    "trains": [
+      6
+    ]
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 5,
+  "fields": {
+    "name": "Амстердам минск епта",
+    "total_travel_time": 6,
+    "from_city": 15,
+    "to_city": 1,
+    "trains": [
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 3,
+  "fields": {
+    "name": "train1",
+    "travel_time": 20,
+    "from_city": 2,
+    "to_city": 15
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 4,
+  "fields": {
+    "name": "train3",
+    "travel_time": 2,
+    "from_city": 1,
+    "to_city": 2
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 5,
+  "fields": {
+    "name": "train4",
+    "travel_time": 2,
+    "from_city": 15,
+    "to_city": 1
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 6,
+  "fields": {
+    "name": "train5",
+    "travel_time": 2,
+    "from_city": 1,
+    "to_city": 15
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 7,
+  "fields": {
+    "name": "train6",
+    "travel_time": 4,
+    "from_city": 15,
+    "to_city": 2
+  }
+},
+{
+  "model": "trains.train",
+  "pk": 8,
+  "fields": {
+    "name": "train7",
+    "travel_time": 2,
+    "from_city": 2,
+    "to_city": 1
+  }
+}
+]
